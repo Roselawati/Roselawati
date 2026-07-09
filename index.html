@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Roselawati</title>
+  <meta name="description" content="Maison Aurélia adalah studio desain interior premium yang merancang ruang hunian dan komersial dengan sentuhan mewah, hangat, dan personal sejak 2016.">
+  <meta name="keywords" content="desain interior premium, jasa interior mewah, styling rumah, interior Jakarta">
+  <meta name="author" content="Maison Aurélia">
+
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:title" content="Maison Aurélia — Studio Desain Interior & Lifestyle Premium">
+  <meta property="og:description" content="Merancang ruang, menghadirkan rasa. Studio desain interior premium untuk hunian dan ruang komersial Anda.">
+  <meta property="og:type" content="website">
+
+  <!-- ================= FAVICON (inline SVG, no external file needed) ================= -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%232B2420'/%3E%3Ctext x='50' y='66' font-size='55' text-anchor='middle' fill='%23C9A063' font-family='Georgia,serif'%3EA%3C/text%3E%3C/svg%3E">
+
+  <!-- ================= GOOGLE FONTS ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ================= BOOTSTRAP 5 (CSS) ================= -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ================= BOOTSTRAP ICONS ================= -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- ================= CUSTOM STYLESHEET ================= -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       LOADING SCREEN
+       Ditampilkan saat pertama kali halaman dibuka, hilang otomatis
+       setelah semua resource selesai dimuat.
+  ========================================================== -->
+  <div id="loadingScreen" class="loading-screen" aria-hidden="true">
+    <div class="loading-inner">
+      <span class="loading-logo">Roselawati</span>
+      <div class="loading-bar"><span id="loadingBarFill" class="loading-bar-fill"></span></div>
+    </div>
+  </div>
+
+  <!-- Scroll progress indicator -->
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgressFill"></span></div>
+
+  <!-- Custom cursor (desktop only, hidden automatically on touch devices via CSS) -->
+  <div class="custom-cursor" id="customCursor" aria-hidden="true">
+    <span class="cursor-dot"></span>
+    <span class="cursor-ring"></span>
+  </div>
+
+  <a class="skip-link" href="#beranda">Langsung ke konten utama</a>
+
+  <!-- =========================================================
+       NAVBAR — Floating Glass Navbar
+  ========================================================== -->
+  <header>
+    <nav class="ma-navbar" id="maNavbar" aria-label="Navigasi utama">
+      <a href="#beranda" class="ma-navbar__brand">
+        <span class="brand-mark">R</span>
+        <span class="brand-name">Roselawati</span>
+      </a>
+
+      <ul class="ma-navbar__links" id="navLinks">
+        <li><a href="#beranda" class="nav-link-item active" data-section="beranda">Home</a></li>
+        <li><a href="#tentang" class="nav-link-item" data-section="tentang">Tentang</a></li>
+        <li><a href="#produk" class="nav-link-item" data-section="produk">Produk</a></li>
+        <li><a href="#layanan" class="nav-link-item" data-section="layanan">Layanan</a></li>
+        <li><a href="#galeri" class="nav-link-item" data-section="galeri">Galeri</a></li>
+        <li><a href="#artikel" class="nav-link-item" data-section="artikel">Artikel</a></li>
+        <li><a href="#testimoni" class="nav-link-item" data-section="testimoni">Testimoni</a></li>
+        <li><a href="#kontak" class="nav-link-item" data-section="kontak">Kontak</a></li>
+      </ul>
+
+      <div class="ma-navbar__actions">
+        <button class="theme-toggle-btn d-none d-lg-inline-flex" id="themeToggleDesktop" type="button" aria-label="Ubah mode gelap/terang">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <a href="#kontak" class="btn ma-btn ma-btn-gold d-none d-lg-inline-flex">Konsultasi</a>
+        <button class="hamburger-btn" id="hamburgerBtn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="sidebarMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       SIDEBAR (Offcanvas) — muncul dari kiri, berisi menu lengkap
+       & informasi kontak/sosial media. Dipakai juga sebagai menu
+       mobile ketika hamburger diklik.
+  ========================================================== -->
+  <div class="offcanvas offcanvas-start ma-sidebar" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarLabel">
+    <div class="offcanvas-header">
+      <span class="ma-sidebar__logo" id="sidebarLabel">Roselawati <em>®</em></span>
+      <button type="button" class="btn-close-custom" data-bs-dismiss="offcanvas" aria-label="Tutup menu"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="ma-sidebar__nav">
+        <li><a href="#beranda" data-section="beranda"><i class="bi bi-house"></i> Home</a></li>
+        <li><a href="#tentang" data-section="tentang"><i class="bi bi-flower2"></i> Tentang</a></li>
+        <li><a href="#produk" data-section="produk"><i class="bi bi-bag-heart"></i> Produk</a></li>
+        <li><a href="#layanan" data-section="layanan"><i class="bi bi-brush"></i> Layanan</a></li>
+        <li><a href="#galeri" data-section="galeri"><i class="bi bi-images"></i> Galeri</a></li>
+        <li><a href="#artikel" data-section="artikel"><i class="bi bi-journal-richtext"></i> Artikel</a></li>
+        <li><a href="#testimoni" data-section="testimoni"><i class="bi bi-chat-heart"></i> Testimoni</a></li>
+        <li><a href="#kontak" data-section="kontak"><i class="bi bi-envelope-heart"></i> Kontak</a></li>
+      </ul>
+
+      <button class="theme-toggle-btn theme-toggle-btn--sidebar" id="themeToggleSidebar" type="button">
+        <i class="bi bi-moon-stars"></i> <span>Mode Gelap</span>
+      </button>
+
+      <div class="ma-sidebar__divider"></div>
+
+      <div class="ma-sidebar__hours">
+        <h6><i class="bi bi-clock"></i> Jam Operasional</h6>
+        <p>Senin – Jumat: 09.00 – 18.00</p>
+        <p>Sabtu: 09.00 – 15.00 &nbsp;•&nbsp; Minggu: Tutup</p>
+      </div>
+
+      <div class="ma-sidebar__contact">
+        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> +62 812-3456-7890</a>
+        <a href="mailto:hello@maisonaurelia.id"><i class="bi bi-envelope"></i> hello@maisonaurelia.id</a>
+      </div>
+
+      <div class="ma-sidebar__social">
+        <a href="#" aria-label="Instagram Maison Aurélia"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="Facebook Maison Aurélia"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="TikTok Maison Aurélia"><i class="bi bi-tiktok"></i></a>
+        <a href="#" aria-label="LinkedIn Maison Aurélia"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- =========================================================
+         HERO SECTION
+    ========================================================== -->
+    <section id="beranda" class="section hero-section">
+      <div class="hero-shape hero-shape--1" aria-hidden="true"></div>
+      <div class="hero-shape hero-shape--2" aria-hidden="true"></div>
+      <div class="hero-shape hero-shape--3" aria-hidden="true"></div>
+      <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6 reveal" data-reveal="up">
+            <span class="ma-badge"><i class="bi bi-stars"></i> Studio Desain Interior Eksklusif Sejak 2016</span>
+            <h1 class="hero-title">
+              Merancang Ruang,<br>
+              <span class="text-gold-gradient" id="heroTyping">Menghadirkan Rasa</span>
+            </h1>
+            <p class="hero-subtitle">
+              Maison Aurélia memadukan keindahan, kenyamanan, dan karakter personal Anda
+              menjadi hunian maupun ruang usaha yang terasa seperti mahakarya — bukan sekadar dekorasi.
+            </p>
+            <div class="hero-cta">
+              <a href="#kontak" class="btn ma-btn ma-btn-gold ma-btn-lg">
+                Konsultasi Gratis <i class="bi bi-arrow-up-right"></i>
+              </a>
+              <a href="#galeri" class="btn ma-btn ma-btn-outline ma-btn-lg">
+                Lihat Portofolio
+              </a>
+            </div>
+
+            <div class="hero-mini-stats">
+              <div class="hero-mini-stat">
+                <span class="counter" data-count="12">0</span><span class="suffix">+</span>
+                <small>Tahun Pengalaman</small>
+              </div>
+              <div class="hero-mini-stat">
+                <span class="counter" data-count="540">0</span><span class="suffix">+</span>
+                <small>Proyek Selesai</small>
+              </div>
+              <div class="hero-mini-stat">
+                <span class="counter" data-count="98">0</span><span class="suffix">%</span>
+                <small>Kepuasan Klien</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal" data-reveal="left">
+            <div class="hero-image-wrap">
+              <img class="hero-image" loading="lazy"
+                   src="https://picsum.photos/seed/aurelia-hero/900/1100"
+                   alt="Ruang tamu mewah hasil desain Maison Aurélia">
+              <div class="hero-image-card">
+                <i class="bi bi-award"></i>
+                <div>
+                  <strong>Best Interior Studio</strong>
+                  <small>Indonesia Design Award 2025</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#tentang" class="scroll-indicator" aria-label="Gulir ke bawah">
+        <span></span>
+      </a>
+
+      <!-- Wave divider -->
+      <svg class="wave-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,64 C240,120 480,0 720,32 C960,64 1200,120 1440,64 L1440,120 L0,120 Z"></path>
+      </svg>
+    </section>
+
+    <!-- =========================================================
+         TENTANG (ABOUT)
+    ========================================================== -->
+    <section id="tentang" class="section about-section">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5 reveal" data-reveal="right">
+            <span class="ma-eyebrow">Tentang Kami</span>
+            <h2 class="section-title">Kisah di Balik <span class="ink-underline">Maison Aurélia</span></h2>
+            <p class="section-desc">
+              Berawal dari studio kecil di Jakarta tahun 2016, Maison Aurélia tumbuh menjadi
+              rumah bagi para desainer, kurator, dan pengrajin yang percaya bahwa ruang terbaik
+              adalah ruang yang bercerita tentang pemiliknya.
+            </p>
+
+            <div class="about-values">
+              <div class="about-value-item">
+                <i class="bi bi-gem"></i>
+                <div>
+                  <h6>Visi</h6>
+                  <p>Menjadi rujukan utama desain interior premium yang personal di Asia Tenggara.</p>
+                </div>
+              </div>
+              <div class="about-value-item">
+                <i class="bi bi-compass"></i>
+                <div>
+                  <h6>Misi</h6>
+                  <p>Menghadirkan pengalaman desain yang teliti, jujur secara material, dan tak lekang waktu.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-progress">
+              <div class="progress-item">
+                <div class="progress-label"><span>Ketepatan Waktu Proyek</span><span>96%</span></div>
+                <div class="progress-track"><div class="progress-fill" data-progress="96"></div></div>
+              </div>
+              <div class="progress-item">
+                <div class="progress-label"><span>Kepuasan Klien</span><span>98%</span></div>
+                <div class="progress-track"><div class="progress-fill" data-progress="98"></div></div>
+              </div>
+              <div class="progress-item">
+                <div class="progress-label"><span>Proyek Berulang / Repeat Client</span><span>87%</span></div>
+                <div class="progress-track"><div class="progress-fill" data-progress="87"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 reveal" data-reveal="left">
+            <h3 class="timeline-heading">Perjalanan Kami</h3>
+            <div class="ma-timeline">
+              <div class="ma-timeline__item">
+                <div class="ma-timeline__dot"><i class="bi bi-flag"></i></div>
+                <div class="ma-timeline__content">
+                  <span class="timeline-year">2016</span>
+                  <h6>Studio Pertama Dibuka</h6>
+                  <p>Maison Aurélia berdiri di sebuah ruko kecil di Kemang dengan tim berisi 3 orang.</p>
+                </div>
+              </div>
+              <div class="ma-timeline__item">
+                <div class="ma-timeline__dot"><i class="bi bi-building"></i></div>
+                <div class="ma-timeline__content">
+                  <span class="timeline-year">2019</span>
+                  <h6>Ekspansi ke Proyek Komersial</h6>
+                  <p>Mulai menangani butik, kafe, dan ruang kantor premium di lima kota besar.</p>
+                </div>
+              </div>
+              <div class="ma-timeline__item">
+                <div class="ma-timeline__dot"><i class="bi bi-trophy"></i></div>
+                <div class="ma-timeline__content">
+                  <span class="timeline-year">2022</span>
+                  <h6>Indonesia Design Award</h6>
+                  <p>Meraih penghargaan "Best Boutique Interior Studio" dua tahun berturut-turut.</p>
+                </div>
+              </div>
+              <div class="ma-timeline__item">
+                <div class="ma-timeline__dot"><i class="bi bi-globe-asia-australia"></i></div>
+                <div class="ma-timeline__content">
+                  <span class="timeline-year">2026</span>
+                  <h6>Koleksi Signature Aurélia</h6>
+                  <p>Meluncurkan lini furnitur &amp; dekor eksklusif hasil kolaborasi pengrajin lokal.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         STATISTIK
+    ========================================================== -->
+    <section class="section stats-section">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-6 col-lg-3 reveal" data-reveal="up">
+            <div class="stat-circle" data-progress="92">
+              <svg viewBox="0 0 120 120"><circle class="stat-circle__bg" cx="60" cy="60" r="52"></circle><circle class="stat-circle__fill" cx="60" cy="60" r="52"></circle></svg>
+              <span class="stat-circle__value"><span class="counter" data-count="540">0</span>+</span>
+            </div>
+            <p class="stat-label">Proyek Selesai</p>
+          </div>
+          <div class="col-6 col-lg-3 reveal" data-reveal="up">
+            <div class="stat-circle" data-progress="98">
+              <svg viewBox="0 0 120 120"><circle class="stat-circle__bg" cx="60" cy="60" r="52"></circle><circle class="stat-circle__fill" cx="60" cy="60" r="52"></circle></svg>
+              <span class="stat-circle__value"><span class="counter" data-count="98">0</span>%</span>
+            </div>
+            <p class="stat-label">Kepuasan Klien</p>
+          </div>
+          <div class="col-6 col-lg-3 reveal" data-reveal="up">
+            <div class="stat-circle" data-progress="45">
+              <svg viewBox="0 0 120 120"><circle class="stat-circle__bg" cx="60" cy="60" r="52"></circle><circle class="stat-circle__fill" cx="60" cy="60" r="52"></circle></svg>
+              <span class="stat-circle__value"><span class="counter" data-count="45">0</span></span>
+            </div>
+            <p class="stat-label">Desainer &amp; Pengrajin</p>
+          </div>
+          <div class="col-6 col-lg-3 reveal" data-reveal="up">
+            <div class="stat-circle" data-progress="12">
+              <svg viewBox="0 0 120 120"><circle class="stat-circle__bg" cx="60" cy="60" r="52"></circle><circle class="stat-circle__fill" cx="60" cy="60" r="52"></circle></svg>
+              <span class="stat-circle__value"><span class="counter" data-count="12">0</span>+</span>
+            </div>
+            <p class="stat-label">Tahun Pengalaman</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PRODUK
+    ========================================================== -->
+    <section id="produk" class="section products-section">
+      <div class="container">
+        <div class="text-center section-heading-wrap reveal" data-reveal="up">
+          <span class="ma-eyebrow">Koleksi Signature</span>
+          <h2 class="section-title">Produk <span class="ink-underline">Pilihan</span></h2>
+          <p class="section-desc mx-auto">Furnitur dan dekor eksklusif hasil kurasi &amp; kolaborasi bersama pengrajin lokal terbaik.</p>
+        </div>
+
+        <div class="row g-4" id="productGrid">
+          <!-- Product cards are static; data-* attributes feed the detail modal via script.js -->
+
+          <div class="col-md-6 col-lg-4 reveal" data-reveal="up">
+            <article class="product-card"
+                     data-name="Meja Kopi Marbre Aurora"
+                     data-category="Furnitur"
+                     data-price="Rp 8.500.000"
+                     data-rating="4.9"
+                     data-badge="Best Seller"
+                     data-desc="Meja kopi dengan permukaan marmer Aurora asli dan kaki kuningan disikat tangan. Setiap urat marmer unik, menjadikan tiap unit satu-satunya di dunia."
+                     data-image="https://picsum.photos/seed/product-1/700/700">
+              <div class="product-card__image">
+                <img src="https://picsum.photos/seed/product-1/700/700" alt="Meja Kopi Marbre Aurora" loading="lazy">
+                <span class="product-badge">Best Seller</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-category">Furnitur</span>
+                <h5>Meja Kopi Marbre Aurora</h5>
+                <div class="product-rating"><i class="bi bi-star-fill"></i> 4.9 <small>(128 ulasan)</small></div>
+                <div class="product-footer">
+                  <span class="product-price">Rp 8.500.000</span>
+                  <div class="product-actions">
+                    <button class="btn-icon-circle" data-bs-toggle="modal" data-bs-target="#productModal" aria-label="Lihat detail"><i class="bi bi-eye"></i></button>
+                    <a class="btn-icon-circle btn-icon-circle--wa" target="_blank" rel="noopener"
+                       href="https://wa.me/6281234567890?text=Halo%20Maison%20Aur%C3%A9lia%2C%20saya%20tertarik%20dengan%20Meja%20Kopi%20Marbre%20Aurora." aria-label="Tanya via WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal" data-reveal="up">
+            <article class="product-card"
+                     data-name="Lampu Gantung Rosalind"
+                     data-category="Lighting"
+                     data-price="Rp 6.200.000"
+                     data-rating="4.8"
+                     data-badge="New"
+                     data-desc="Lampu gantung kaca buram berbentuk kelopak dengan rangka rose gold, memberi cahaya hangat yang lembut untuk ruang makan maupun ruang keluarga."
+                     data-image="https://picsum.photos/seed/product-2/700/700">
+              <div class="product-card__image">
+                <img src="https://picsum.photos/seed/product-2/700/700" alt="Lampu Gantung Rosalind" loading="lazy">
+                <span class="product-badge product-badge--new">New</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-category">Lighting</span>
+                <h5>Lampu Gantung Rosalind</h5>
+                <div class="product-rating"><i class="bi bi-star-fill"></i> 4.8 <small>(76 ulasan)</small></div>
+                <div class="product-footer">
+                  <span class="product-price">Rp 6.200.000</span>
+                  <div class="product-actions">
+                    <button class="btn-icon-circle" data-bs-toggle="modal" data-bs-target="#productModal" aria-label="Lihat detail"><i class="bi bi-eye"></i></button>
+                    <a class="btn-icon-circle btn-icon-circle--wa" target="_blank" rel="noopener"
+                       href="https://wa.me/6281234567890?text=Halo%20Maison%20Aur%C3%A9lia%2C%20saya%20tertarik%20dengan%20Lampu%20Gantung%20Rosalind." aria-label="Tanya via WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal" data-reveal="up">
+            <article class="product-card"
+                     data-name="Sofa Velvet Comtesse"
+                     data-category="Furnitur"
+                     data-price="Rp 8.500.000"
+                     data-rating="5.0"
+                     data-badge="Limited"
+                     data-desc="Sofa tiga dudukan berbahan velvet premium warna champagne, rangka kayu jati solid dengan kaki emas matte. Diproduksi terbatas 20 unit per tahun."
+                     data-image="https://picsum.photos/seed/product-3/700/700">
+              <div class="product-card__image">
+                <img src="https://picsum.photos/seed/product-3/700/700" alt="Sofa Velvet Comtesse" loading="lazy">
+                <span class="product-badge product-badge--limited">Limited</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-category">Furnitur</span>
+                <h5>Sofa Velvet Comtesse</h5>
+                <div class="product-rating"><i class="bi bi-star-fill"></i> 5.0 <small>(54 ulasan)</small></div>
+                <div class="product-footer">
+                  <span class="product-price">Rp 8.500.000</span>
+                  <div class="product-actions">
+                    <button class="btn-icon-circle" data-bs-toggle="modal" data-bs-target="#productModal" aria-label="Lihat detail"><i class="bi bi-eye"></i></button>
+                    <a class="btn-icon-circle btn-icon-circle--wa" target="_blank" rel="noopener"
+                       href="https://wa.me/6281234567890?text=Halo%20Maison%20Aur%C3%A9lia%2C%20saya%20tertarik%20dengan%20Sofa%20Velvet%20Comtesse." aria-label="Tanya via WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal" data-reveal="up">
+            <article class="product-card"
+                     data-name="Cermin Dinding Belle Époque"
+                     data-category="Dekor"
+                     data-price="Rp 3.100.000"
+                     data-rating="4.7"
+                     data-badge=""
+                     data-desc="Cermin berbingkai kuningan bertekstur ukir tangan, terinspirasi era Belle Époque Paris. Cocok sebagai focal point ruang tamu maupun lorong."
+                     data-image="https://picsum.photos/seed/product-4/700/700">
+              <div class="product-card__image">
+                <img src="https://picsum.photos/seed/product-4/700/700" alt="Cermin Dinding Belle Époque" loading="lazy">
+              </div>
+              <div class="product-card__body">
+                <span class="product-category">Dekor</span>
+                <h5>Cermin Dinding Belle Époque</h5>
+                <div class="product-rating"><i class="bi bi-star-fill"></i> 4.7 <small>(41 ulasan)</small></div>
+                <div class="product-footer">
+                  <span class="product-price">Rp 3.100.000</span>
+                  <div class="product-actions">
+                    <button class="btn-icon-circle" data-bs-toggle="modal" data-bs-target="#productModal" aria-label="Lihat detail"><i class="bi bi-eye"></i></button>
+                    <a class="btn-icon-circle btn-icon-circle--wa" target="_blank" rel="noopener"
+                       href="https://wa.me/6281234567890?text=Halo%20Maison%20Aur%C3%A9lia%2C%20saya%20tertarik%20dengan%20Cermin%20Dinding%20Belle%20%C3%89poque." aria-label="Tanya via WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal" data-reveal="up">
+            <article class="product-card"
+                     data-name="Vas Keramik Solstice"
+                     data-category="Dekor"
+                     data-price="Rp 1.450.000"
+                     data-rating="4.6"
+                     data-badge="New"
+                     data-desc="Vas keramik glasir gradasi krem ke terracotta, dibuat oleh pengrajin di Kasongan dengan teknik putar tangan tradisional."
+                     data-image="https://picsum.photos/seed/product-5/700/700">
+              <div class="product-card__image">
+                <img src="https://picsum.photos/seed/product-5/700/700" alt="Vas Keramik Solstice" loading="lazy">
+                <span class="product-badge product-badge--new">New</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-category">Dekor</span>
+                <h5>Vas Keramik Solstice</h5>
+                <div class="product-rating"><i class="bi bi-star-fill"></i> 4.6 <small>(63 ulasan)</small></div>
+                <div class="product-footer">
+                  <span class="product-price">Rp 1.450.000</span>
+                  <div class="product-actions">
+                    <button class="btn-icon-circle" data-bs-toggle="modal" data-bs-target="#productModal" aria-label="Lihat detail"><i class="bi bi-eye"></i></button>
+                    <a class="btn-icon-circle btn-icon-circle--wa" target="_blank" rel="noopener"
+                       href="https://wa.me/6281234567890?text=Halo%20Maison%20Aur%C3%A9lia%2C%20saya%20tertarik%20dengan%20Vas%20Keramik%20Solstice." aria-label="Tanya via WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4 reveal" data-reveal="up">
+            <article class="product-card"
+                     data-name="Set Kursi Makan Noire"
+                     data-category="Furnitur"
+                     data-price="Rp 12.900.000"
+                     data-rating="4.9"
+                     data-badge="Best Seller"
+                     data-desc="Enam kursi makan berlapis boucle warna gading dengan rangka kayu hitam matte. Desain minimalis dengan detail jahitan premium."
+                     data-image="https://picsum.photos/seed/product-6/700/700">
+              <div class="product-card__image">
+                <img src="https://picsum.photos/seed/product-6/700/700" alt="Set Kursi Makan Noire" loading="lazy">
+                <span class="product-badge">Best Seller</span>
+              </div>
+              <div class="product-card__body">
+                <span class="product-category">Furnitur</span>
+                <h5>Set Kursi Makan Noire</h5>
+                <div class="product-rating"><i class="bi bi-star-fill"></i> 4.9 <small>(97 ulasan)</small></div>
+                <div class="product-footer">
+                  <span class="product-price">Rp 12.900.000</span>
+                  <div class="product-actions">
+                    <button class="btn-icon-circle" data-bs-toggle="modal" data-bs-target="#productModal" aria-label="Lihat detail"><i class="bi bi-eye"></i></button>
+                    <a class="btn-icon-circle btn-icon-circle--wa" target="_blank" rel="noopener"
+                       href="https://wa.me/6281234567890?text=Halo%20Maison%20Aur%C3%A9lia%2C%20saya%20tertarik%20dengan%20Set%20Kursi%20Makan%20Noire." aria-label="Tanya via WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Detail Modal (Bootstrap) -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content ma-modal">
+          <button type="button" class="btn-close-custom modal-close-btn" data-bs-dismiss="modal" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img id="modalProductImage" src="" alt="" class="modal-product-image">
+            </div>
+            <div class="col-md-7">
+              <div class="modal-body p-4 p-lg-5">
+                <span class="product-category" id="modalProductCategory">Kategori</span>
+                <h3 id="productModalLabel">Nama Produk</h3>
+                <div class="product-rating mb-3"><i class="bi bi-star-fill"></i> <span id="modalProductRating">4.9</span> <small>/ 5.0</small></div>
+                <p id="modalProductDesc">Deskripsi produk.</p>
+                <div class="modal-price-row">
+                  <span class="product-price" id="modalProductPrice">Rp 0</span>
+                  <a id="modalProductWA" href="#" target="_blank" rel="noopener" class="btn ma-btn ma-btn-gold">
+                    <i class="bi bi-whatsapp"></i> Tanya via WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         LAYANAN
+    ========================================================== -->
+    <section id="layanan" class="section services-section">
+      <div class="container">
+        <div class="text-center section-heading-wrap reveal" data-reveal="up">
+          <span class="ma-eyebrow">Apa yang Kami Kerjakan</span>
+          <h2 class="section-title">Layanan <span class="ink-underline">Kami</span></h2>
+          <p class="section-desc mx-auto">Dari konsultasi singkat hingga transformasi ruang menyeluruh, kami hadir di setiap tahap perjalanan desain Anda.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal" data-reveal="up">
+            <div class="service-card">
+              <div class="service-card__icon"><i class="bi bi-easel3"></i></div>
+              <h5>Konsultasi Desain</h5>
+              <p>Sesi mendalam untuk memahami kebutuhan, gaya hidup, dan visi ruang impian Anda.</p>
+              <a href="#kontak" class="service-card__link">Pelajari lebih lanjut <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal" data-reveal="up">
+            <div class="service-card">
+              <div class="service-card__icon"><i class="bi bi-house-heart"></i></div>
+              <h5>Styling Interior Penuh</h5>
+              <p>Perancangan menyeluruh dari denah, material, furnitur, hingga pencahayaan.</p>
+              <a href="#kontak" class="service-card__link">Pelajari lebih lanjut <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal" data-reveal="up">
+            <div class="service-card">
+              <div class="service-card__icon"><i class="bi bi-flower1"></i></div>
+              <h5>Styling Acara &amp; Ruang</h5>
+              <p>Menata suasana untuk peluncuran produk, pernikahan intim, hingga jamuan privat.</p>
+              <a href="#kontak" class="service-card__link">Pelajari lebih lanjut <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal" data-reveal="up">
+            <div class="service-card">
+              <div class="service-card__icon"><i class="bi bi-bag-check"></i></div>
+              <h5>Personal Shopping</h5>
+              <p>Kurasi &amp; pengadaan furnitur serta dekor pilihan dari jaringan pengrajin kami.</p>
+              <a href="#kontak" class="service-card__link">Pelajari lebih lanjut <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         GALERI
+    ========================================================== -->
+    <section id="galeri" class="section gallery-section">
+      <div class="container">
+        <div class="text-center section-heading-wrap reveal" data-reveal="up">
+          <span class="ma-eyebrow">Portofolio</span>
+          <h2 class="section-title">Galeri <span class="ink-underline">Proyek</span></h2>
+          <p class="section-desc mx-auto">Sebagian kecil dari ruang-ruang yang telah kami wujudkan bersama klien.</p>
+        </div>
+
+        <div class="gallery-filters reveal" data-reveal="up" role="tablist" aria-label="Filter galeri">
+          <button class="gallery-filter-btn active" data-filter="all">Semua</button>
+          <button class="gallery-filter-btn" data-filter="residential">Residensial</button>
+          <button class="gallery-filter-btn" data-filter="commercial">Komersial</button>
+          <button class="gallery-filter-btn" data-filter="event">Acara</button>
+          <button class="gallery-filter-btn" data-filter="styling">Styling</button>
+        </div>
+
+        <div class="gallery-masonry" id="galleryMasonry">
+          <div class="gallery-item" data-category="residential"><img src="https://picsum.photos/seed/gal-1/600/800" loading="lazy" alt="Ruang tamu residensial minimalis mewah"><div class="gallery-item__overlay"><span>Residensial</span><h6>Kediaman Kemang</h6></div></div>
+          <div class="gallery-item" data-category="commercial"><img src="https://picsum.photos/seed/gal-2/600/500" loading="lazy" alt="Interior kafe komersial elegan"><div class="gallery-item__overlay"><span>Komersial</span><h6>Kafe Lumière</h6></div></div>
+          <div class="gallery-item" data-category="event"><img src="https://picsum.photos/seed/gal-3/600/700" loading="lazy" alt="Styling acara pernikahan intim mewah"><div class="gallery-item__overlay"><span>Acara</span><h6>Pernikahan Intim Amara</h6></div></div>
+          <div class="gallery-item" data-category="styling"><img src="https://picsum.photos/seed/gal-4/600/600" loading="lazy" alt="Styling meja makan dekor mewah"><div class="gallery-item__overlay"><span>Styling</span><h6>Dining Table Edit</h6></div></div>
+          <div class="gallery-item" data-category="residential"><img src="https://picsum.photos/seed/gal-5/600/750" loading="lazy" alt="Kamar tidur utama desain hangat"><div class="gallery-item__overlay"><span>Residensial</span><h6>Suite Pantai Indah</h6></div></div>
+          <div class="gallery-item" data-category="commercial"><img src="https://picsum.photos/seed/gal-6/600/850" loading="lazy" alt="Lobi kantor premium"><div class="gallery-item__overlay"><span>Komersial</span><h6>Lobi Kantor Meridian</h6></div></div>
+          <div class="gallery-item" data-category="residential"><img src="https://picsum.photos/seed/gal-7/600/550" loading="lazy" alt="Dapur mewah dengan island marmer"><div class="gallery-item__overlay"><span>Residensial</span><h6>Dapur Villa Ubud</h6></div></div>
+          <div class="gallery-item" data-category="event"><img src="https://picsum.photos/seed/gal-8/600/700" loading="lazy" alt="Dekorasi peluncuran produk mewah"><div class="gallery-item__overlay"><span>Acara</span><h6>Peluncuran Rosalind</h6></div></div>
+          <div class="gallery-item" data-category="styling"><img src="https://picsum.photos/seed/gal-9/600/650" loading="lazy" alt="Styling sudut baca personal"><div class="gallery-item__overlay"><span>Styling</span><h6>Reading Nook Edit</h6></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox for gallery -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
+      <button class="lightbox-nav lightbox-nav--prev" id="lightboxPrev" aria-label="Sebelumnya"><i class="bi bi-chevron-left"></i></button>
+      <img src="" alt="" id="lightboxImage">
+      <button class="lightbox-nav lightbox-nav--next" id="lightboxNext" aria-label="Berikutnya"><i class="bi bi-chevron-right"></i></button>
+    </div>
+
+    <!-- =========================================================
+         ARTIKEL — dirender secara dinamis oleh script.js
+         (minimal 12 artikel, mendukung pencarian, filter kategori,
+          dan paginasi)
+    ========================================================== -->
+    <section id="artikel" class="section articles-section">
+      <div class="container">
+        <div class="text-center section-heading-wrap reveal" data-reveal="up">
+          <span class="ma-eyebrow">Design Journal</span>
+          <h2 class="section-title">Artikel &amp; <span class="ink-underline">Inspirasi</span></h2>
+          <p class="section-desc mx-auto">Catatan, panduan, dan tren dari studio kami — untuk Anda yang ingin lebih memahami dunia desain interior.</p>
+        </div>
+
+        <div class="articles-toolbar reveal" data-reveal="up">
+          <div class="articles-search">
+            <i class="bi bi-search"></i>
+            <input type="text" id="articleSearchInput" placeholder="Cari artikel...">
+          </div>
+          <div class="articles-filter" id="articleFilterButtons">
+            <button class="gallery-filter-btn active" data-filter="all">Semua</button>
+            <button class="gallery-filter-btn" data-filter="Desain Interior">Desain Interior</button>
+            <button class="gallery-filter-btn" data-filter="Tren">Tren</button>
+            <button class="gallery-filter-btn" data-filter="Panduan">Panduan</button>
+            <button class="gallery-filter-btn" data-filter="Gaya Hidup">Gaya Hidup</button>
+          </div>
+        </div>
+
+        <div class="row g-4" id="articlesGrid"><!-- diisi oleh JavaScript --></div>
+
+        <p class="text-center articles-empty d-none" id="articlesEmpty">Tidak ada artikel yang cocok dengan pencarian Anda.</p>
+
+        <nav class="articles-pagination" id="articlesPagination" aria-label="Navigasi halaman artikel"></nav>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         TESTIMONI
+    ========================================================== -->
+    <section id="testimoni" class="section testimonials-section">
+      <div class="container">
+        <div class="text-center section-heading-wrap reveal" data-reveal="up">
+          <span class="ma-eyebrow">Kata Klien Kami</span>
+          <h2 class="section-title">Testimoni <span class="ink-underline">Klien</span></h2>
+        </div>
+
+        <div id="testimonialCarousel" class="carousel slide ma-testimonial-carousel reveal" data-reveal="up" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <div class="testimonial-card mx-auto">
+                <div class="testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p>"Tim Maison Aurélia mendengarkan setiap detail yang kami inginkan. Hasilnya, rumah kami terasa jauh lebih hangat dan personal dari yang kami bayangkan."</p>
+                <div class="testimonial-person">
+                  <img src="https://ui-avatars.com/api/?name=Larasati+Wibowo&background=C9A063&color=fff&size=128" alt="Larasati Wibowo">
+                  <div><strong>Larasati Wibowo</strong><small>Pemilik Rumah, Pantai Indah Kapuk</small></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="testimonial-card mx-auto">
+                <div class="testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p>"Proses renovasi kafe kami berjalan rapi dan tepat waktu. Desain akhirnya benar-benar meningkatkan pengalaman pelanggan kami."</p>
+                <div class="testimonial-person">
+                  <img src="https://ui-avatars.com/api/?name=Bima+Aditya&background=D9A79C&color=fff&size=128" alt="Bima Aditya">
+                  <div><strong>Bima Aditya</strong><small>Pemilik, Kafe Lumière</small></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="testimonial-card mx-auto">
+                <div class="testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+                <p>"Styling pernikahan kami ditata dengan sangat detail — dari bunga hingga pencahayaan, semua terasa mewah namun tetap intim."</p>
+                <div class="testimonial-person">
+                  <img src="https://ui-avatars.com/api/?name=Amara+%26+Reza&background=C7B8D6&color=fff&size=128" alt="Amara & Reza">
+                  <div><strong>Amara &amp; Reza</strong><small>Klien Acara Pernikahan</small></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="testimonial-card mx-auto">
+                <div class="testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                <p>"Lobi kantor kami sekarang jadi kebanggaan — banyak klien yang berkomentar positif sejak direnovasi oleh Maison Aurélia."</p>
+                <div class="testimonial-person">
+                  <img src="https://ui-avatars.com/api/?name=Farah+Nadhira&background=C9A063&color=fff&size=128" alt="Farah Nadhira">
+                  <div><strong>Farah Nadhira</strong><small>Direktur Operasional, Meridian Group</small></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+            <span class="testimonial-nav-btn"><i class="bi bi-chevron-left"></i></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+            <span class="testimonial-nav-btn"><i class="bi bi-chevron-right"></i></span>
+          </button>
+          <div class="carousel-indicators ma-testimonial-dots">
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PARTNER — infinite logo slider
+    ========================================================== -->
+    <section class="section partners-section reveal" data-reveal="up">
+      <div class="container">
+        <p class="partners-title">Dipercaya oleh berbagai brand &amp; media</p>
+      </div>
+      <div class="partners-track-wrap">
+        <div class="partners-track">
+          <span>HARPER'S BAZAAR</span><span>Living Asia</span><span>Dekoruma Pro</span><span>Indonesia Design Week</span><span>The Loft Journal</span><span>Casa Interiors</span>
+          <span>HARPER'S BAZAAR</span><span>Living Asia</span><span>Dekoruma Pro</span><span>Indonesia Design Week</span><span>The Loft Journal</span><span>Casa Interiors</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FAQ
+    ========================================================== -->
+    <section class="section faq-section">
+      <div class="container">
+        <div class="text-center section-heading-wrap reveal" data-reveal="up">
+          <span class="ma-eyebrow">Pertanyaan Umum</span>
+          <h2 class="section-title">Tanya <span class="ink-underline">Jawab</span></h2>
+        </div>
+
+        <div class="accordion ma-accordion reveal" data-reveal="up" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Berapa lama proses desain hingga instalasi berlangsung?
+              </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Umumnya 6–12 minggu untuk residensial berskala menengah, tergantung kompleksitas ruang dan ketersediaan material yang dipilih.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Apakah Maison Aurélia melayani proyek di luar Jakarta?
+              </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Ya. Kami telah mengerjakan proyek di Bandung, Surabaya, Bali, hingga Medan dengan tim yang berkunjung langsung ke lokasi pada tahap kunci.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Bagaimana skema biaya konsultasi dan desain?
+              </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Konsultasi awal gratis. Biaya desain dihitung berdasarkan luas ruang dan tingkat kustomisasi, disampaikan transparan di awal melalui proposal tertulis.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                Apakah furnitur pada koleksi produk bisa dipesan custom?
+              </button>
+            </h3>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Bisa. Sebagian besar produk pada koleksi signature kami tersedia dalam pilihan ukuran, warna, dan material alternatif sesuai kebutuhan ruang Anda.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CTA
+    ========================================================== -->
+    <section class="section cta-section reveal" data-reveal="up">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Siap Menghadirkan Ruang Impian Anda?</h2>
+          <p>Jadwalkan konsultasi gratis bersama tim desainer kami dan mulai perjalanan menuju ruang yang benar-benar terasa seperti rumah.</p>
+          <a href="#kontak" class="btn ma-btn ma-btn-glow ma-btn-lg">Mulai Konsultasi <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         KONTAK
+    ========================================================== -->
+    <section id="kontak" class="section contact-section">
+      <div class="container">
+        <div class="text-center section-heading-wrap reveal" data-reveal="up">
+          <span class="ma-eyebrow">Hubungi Kami</span>
+          <h2 class="section-title">Mari <span class="ink-underline">Berdiskusi</span></h2>
+          <p class="section-desc mx-auto">Ceritakan tentang ruang Anda, dan tim kami akan menghubungi dalam 1×24 jam kerja.</p>
+        </div>
+
+        <div class="row g-5">
+          <div class="col-lg-5 reveal" data-reveal="right">
+            <div class="contact-info-card">
+              <div class="contact-info-item">
+                <i class="bi bi-geo-alt"></i>
+                <div><h6>Studio Kami</h6><p>Jl. Kemang Raya No. 88, Jakarta Selatan, Indonesia</p></div>
+              </div>
+              <div class="contact-info-item">
+                <i class="bi bi-telephone"></i>
+                <div><h6>Telepon / WhatsApp</h6><p>+62 812-3456-7890</p></div>
+              </div>
+              <div class="contact-info-item">
+                <i class="bi bi-envelope"></i>
+                <div><h6>Email</h6><p>hello@maisonaurelia.id</p></div>
+              </div>
+              <div class="contact-info-item">
+                <i class="bi bi-clock"></i>
+                <div><h6>Jam Operasional</h6><p>Senin–Jumat 09.00–18.00, Sabtu 09.00–15.00</p></div>
+              </div>
+
+              <div class="contact-map-wrap">
+                <iframe src="https://www.google.com/maps?q=Kemang%2C%20Jakarta%20Selatan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Studio Maison Aurélia"></iframe>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 reveal" data-reveal="left">
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="contactName" class="form-label">Nama Lengkap</label>
+                  <input type="text" class="form-control ma-input" id="contactName" required minlength="3">
+                  <div class="invalid-feedback">Mohon isi nama minimal 3 karakter.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="contactEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control ma-input" id="contactEmail" required>
+                  <div class="invalid-feedback">Mohon isi dengan format email yang valid.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="contactPhone" class="form-label">Nomor HP</label>
+                  <input type="tel" class="form-control ma-input" id="contactPhone" required pattern="^[0-9+\-\s]{8,15}$">
+                  <div class="invalid-feedback">Mohon isi nomor HP yang valid (8–15 digit).</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="contactSubject" class="form-label">Layanan yang Diminati</label>
+                  <select class="form-select ma-input" id="contactSubject" required>
+                    <option value="" selected disabled>Pilih layanan</option>
+                    <option>Konsultasi Desain</option>
+                    <option>Styling Interior Penuh</option>
+                    <option>Styling Acara &amp; Ruang</option>
+                    <option>Personal Shopping</option>
+                  </select>
+                  <div class="invalid-feedback">Mohon pilih salah satu layanan.</div>
+                </div>
+                <div class="col-12">
+                  <label for="contactMessage" class="form-label">Pesan</label>
+                  <textarea class="form-control ma-input" id="contactMessage" rows="4" required minlength="10"></textarea>
+                  <div class="invalid-feedback">Mohon ceritakan kebutuhan Anda (minimal 10 karakter).</div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn ma-btn ma-btn-gold ma-btn-lg w-100 w-md-auto">
+                    Kirim Pesan <i class="bi bi-send"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast notification for form success -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1200;">
+    <div id="contactToast" class="toast ma-toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-body">
+        <i class="bi bi-check-circle-fill"></i>
+        <div>
+          <strong>Pesan terkirim!</strong>
+          <p>Terima kasih, tim kami akan segera menghubungi Anda.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Tutup"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer class="ma-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <span class="ma-footer__logo">Roselawati<em>®</em></span>
+          <p class="ma-footer__desc">Studio desain interior &amp; lifestyle premium yang merancang ruang dengan rasa, sejak 2016.</p>
+          <div class="ma-footer__social">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>Navigasi</h6>
+          <ul class="ma-footer__links">
+            <li><a href="#beranda">Home</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>Lainnya</h6>
+          <ul class="ma-footer__links">
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#artikel">Artikel</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6>Newsletter</h6>
+          <p class="ma-footer__desc">Dapatkan inspirasi desain &amp; penawaran eksklusif langsung ke email Anda.</p>
+          <form class="ma-newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Alamat email Anda" required aria-label="Alamat email">
+            <button type="submit" aria-label="Berlangganan"><i class="bi bi-send"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="ma-footer__bottom">
+        <p>&copy; <span id="footerYear"></span> Roselawati. Seluruh hak cipta dilindungi.</p>
+        <div class="ma-footer__legal">
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">Syarat &amp; Ketentuan</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas"><i class="bi bi-arrow-up"></i></button>
+  </footer>
+
+  <!-- =========================================================
+       FLOATING WHATSAPP
+  ========================================================== -->
+  <a href="https://wa.me/6281234567890?text=Halo%20Maison%20Aur%C3%A9lia%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener" class="floating-wa" aria-label="Chat via WhatsApp">
+    <span class="floating-wa__badge">1</span>
+    <i class="bi bi-whatsapp"></i>
+    <span class="floating-wa__tooltip">Chat dengan kami</span>
+  </a>
+
+  <!-- ================= BOOTSTRAP 5 (JS Bundle incl. Popper) ================= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ================= CUSTOM SCRIPT ================= -->
+  <script src="script.js"></script>
+</body>
+</html>
